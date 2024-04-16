@@ -2,6 +2,7 @@ import logo from "../assets/logo.svg";
 import Button from "../ui/Button";
 
 import { Link } from "react-router-dom";
+import Input from "../ui/Input";
 
 const Register = () => {
   return (
@@ -10,25 +11,14 @@ const Register = () => {
 
       <form className="rounded-2xl bg-semi-dark px-8 py-10">
         <h2 className="mb- heading-l mb-10 text-white">Sign up</h2>
-        <input
-          className="body-m mb-5 w-full border-b border-b-white/50 bg-transparent pb-3 ps-3 text-white caret-red placeholder:text-white/50 focus:outline-none"
-          type="email"
-          placeholder="Email address"
-        />
-        <input
-          className="body-m mb-5 w-full border-b border-b-white/50 bg-transparent pb-3 ps-3 text-white caret-red placeholder:text-white/50 focus:outline-none"
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          className="body-m  w-full border-b border-b-white/50 bg-transparent pb-3 ps-3 text-white caret-red placeholder:text-white/50 focus:outline-none"
-          type="password"
-          placeholder="Repeat Password"
-        />
+        <Input type="email" placeholder="Email address" />
+        <Input type="password" placeholder="Password" />
+        <Input type="password" placeholder="Repeat Password" />
+
         <Button className="mt-10">Create an account</Button>
         <p className="body-m mt-5 text-center text-white">
           Already have an account?
-          <Link to="/login" className="ms-1 text-red">
+          <Link to="/login" className="ms-1 text-red hover:underline">
             Login
           </Link>
         </p>
