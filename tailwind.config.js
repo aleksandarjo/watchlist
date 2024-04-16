@@ -38,6 +38,12 @@ export default {
         ".heading-l": {
           "@apply text-[2rem] font-light": {},
         },
+        ".body-m": {
+          "@apply text-[0.94rem] font-light": {},
+        },
+        ".body-s": {
+          "@apply text-[0.815rem] font-light": {},
+        },
       });
     },
   ],

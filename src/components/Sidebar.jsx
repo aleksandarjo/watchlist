@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
-  console.log(location);
+
   return (
     <header>
       <div className="flex flex-row items-center justify-between bg-semi-dark px-5 py-6 lg:mx-4 lg:mt-4 lg:min-h-[75%] lg:flex-col lg:gap-10 lg:rounded-lg  lg:px-0 lg:py-10 ">
