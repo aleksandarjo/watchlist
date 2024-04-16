@@ -1,15 +1,15 @@
 import logo from "../assets/logo.svg";
 import Button from "../ui/Button";
-
-import { Link } from "react-router-dom";
 import Input from "../ui/Input";
 
-const Register = () => {
+import { Link } from "react-router-dom";
+
+const Signup = () => {
   return (
-    <section className="mx-auto flex min-h-dvh max-w-[25rem] flex-col items-center justify-center px-5 md:px-0">
+    <section className="mx-auto flex min-h-dvh flex-col items-center justify-center px-5 md:px-0">
       <img src={logo} alt="logo" className="mx-auto mb-20 block" />
 
-      <form className="rounded-2xl bg-semi-dark px-8 py-10">
+      <form className="rounded-2xl bg-semi-dark px-8 py-10 sm:min-w-[25rem]">
         <h2 className="mb- heading-l mb-10 text-white">Sign up</h2>
         <Input type="email" placeholder="Email address" />
         <Input type="password" placeholder="Password" />
@@ -27,4 +27,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Signup;
