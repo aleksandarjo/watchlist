@@ -7,14 +7,12 @@ const AppLayout = () => {
   return (
     <div className="grid min-h-dvh grid-rows-[auto_2rem_1fr] lg:grid-cols-[6rem_1fr] lg:grid-rows-1">
       <Sidebar />
-      <div className="grid grid-rows-[2rem_1fr]">
-        <div className="bg-blue-600">
-          <Search />
-        </div>
+      <main className="grid lg:grid-rows-[8.5rem_1fr]">
+        <Search />
         <div className="bg-red">
           <Outlet />
         </div>
-      </div>
+      </main>
     </div>
   );
 };
