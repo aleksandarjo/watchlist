@@ -13,3 +13,12 @@ html {
     @apply font-sans text-base;
   }
 }
+
+@layer components {
+  .movie-info {
+    @apply body-m flex items-center gap-2 uppercase  opacity-90;
+  }
+  .h-custom {
+    height: calc(100dvh - 100px);
+  }
+}

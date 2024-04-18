@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import { AuthProvider } from "./contexts/AuthContext";
+
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 import Home from "./pages/Home";
@@ -45,14 +47,13 @@ const router = createBrowserRouter([
   },
 ]);
 
-// key 1dfd87fdbfcdf44ed782a896d8e18f44
-// access eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZGZkODdmZGJmY2RmNDRlZDc4MmE4OTZkOGUxOGY0NCIsInN1YiI6IjY2MTk0NDJiNGRhM2Q0MDE2MjkxYzk4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cVBMt0B7CU6519zdKBUyRSOh27pbN4qx4qhvOh3L4U8
-
 const App = () => {
   return (
-    <RouterProvider router={router}>
-      <AppLayout></AppLayout>
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}>
+        <AppLayout />
+      </RouterProvider>
+    </AuthProvider>
   );
 };
 

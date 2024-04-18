@@ -1,5 +1,5 @@
 import logo from "../assets/logo.svg";
-import { navigation } from "../constants";
+import { navigation } from "../utils/constants";
 import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
@@ -7,7 +7,7 @@ const Sidebar = () => {
 
   return (
     <header>
-      <div className="flex flex-row items-center justify-between bg-semi-dark px-5 py-6 lg:mx-4 lg:mt-4 lg:min-h-[75%] lg:flex-col lg:gap-10 lg:rounded-lg  lg:px-0 lg:py-10 ">
+      <div className="lg:h-custom flex flex-row items-center justify-between bg-semi-dark px-5 py-6 lg:mx-4 lg:mt-4 lg:flex-col lg:gap-10 lg:rounded-lg  lg:px-0 lg:py-10 ">
         <nav className="flex w-full flex-row items-center lg:flex-col lg:gap-16">
           <a href="/">
             <img src={logo} alt="logo" />
