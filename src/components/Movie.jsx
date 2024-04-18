@@ -2,8 +2,10 @@ import { IoPlayCircle } from "react-icons/io5";
 import { MdDateRange } from "react-icons/md";
 import { MdLocalMovies } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-import MovieActions from "../components/MovieActions";
+import { FaRegBookmark } from "react-icons/fa6";
+import { FaInfoCircle } from "react-icons/fa";
 import { getYear } from "../utils/helpers";
 
 const Movie = ({ ...movie }) => {
@@ -46,7 +48,14 @@ const Movie = ({ ...movie }) => {
         </ul>
         <h3 className="heading-s text-white">{movie?.title || movie?.name}</h3>
       </div>
-      <MovieActions />
+      <div className="absolute right-2 top-2 z-30 flex flex-col gap-2 ">
+        <button className="actions-group rounded-full bg-semi-dark/50 p-2 hover:bg-white">
+          <FaRegBookmark className="actions-group-hover:text-black" />
+        </button>
+        <Link to={`/${movie.id}`} className="rounded-full bg-semi-dark/50 p-2">
+          <FaInfoCircle />
+        </Link>
+      </div>
     </article>
   );
 };
