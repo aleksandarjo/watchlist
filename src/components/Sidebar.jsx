@@ -9,9 +9,9 @@ const Sidebar = () => {
     <header>
       <div className="lg:h-custom flex flex-row items-center justify-between bg-semi-dark px-5 py-6 lg:mx-4 lg:mt-4 lg:flex-col lg:gap-10 lg:rounded-lg  lg:px-0 lg:py-10 ">
         <nav className="flex w-full flex-row items-center lg:flex-col lg:gap-16">
-          <a href="/">
+          <NavLink to="/">
             <img src={logo} alt="logo" />
-          </a>
+          </NavLink>
 
           <ul className="flex w-full flex-row items-center justify-center gap-6 lg:flex-col">
             {navigation.map((item) => (
