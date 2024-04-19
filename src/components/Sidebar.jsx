@@ -1,6 +1,6 @@
 import logo from "../assets/logo.svg";
 import { navigation } from "../utils/constants";
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -16,8 +16,8 @@ const Sidebar = () => {
           <ul className="flex w-full flex-row items-center justify-center gap-6 lg:flex-col">
             {navigation.map((item) => (
               <li key={item.id}>
-                <a
-                  href={item.url}
+                <NavLink
+                  to={item.url}
                   className={`flex items-center justify-center  ${item.size} ${
                     item.url === location.pathname
                       ? "text-white"
@@ -25,7 +25,7 @@ const Sidebar = () => {
                   } transition-colors hover:text-red`}
                 >
                   {item.icon}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
