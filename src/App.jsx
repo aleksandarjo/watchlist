@@ -10,6 +10,7 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./components/AppLayout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import MovieDetail from "./pages/MovieDetail";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/:id",
+    element: <MovieDetail />,
   },
   {
     element: <AppLayout />,

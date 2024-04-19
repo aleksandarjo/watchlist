@@ -49,11 +49,11 @@ const Movie = ({ ...movie }) => {
         <h3 className="heading-s text-white">{movie?.title || movie?.name}</h3>
       </div>
       <div className="absolute right-2 top-2 z-30 flex flex-col gap-2 ">
-        <button className="actions-group rounded-full bg-semi-dark/50 p-2 hover:bg-white">
-          <FaRegBookmark className="actions-group-hover:text-black" />
+        <button className="actions-group rounded-full bg-semi-dark/50 p-2">
+          <FaRegBookmark className=" text-white" />
         </button>
         <Link to={`/${movie.id}`} className="rounded-full bg-semi-dark/50 p-2">
-          <FaInfoCircle />
+          <FaInfoCircle className=" text-white" />
         </Link>
       </div>
     </article>
