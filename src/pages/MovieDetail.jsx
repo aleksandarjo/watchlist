@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import MovieDetailHero from "../components/MovieDetailHero";
 import SimilarMovies from "../components/SimilarMovies";
 
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
+// import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ const MovieDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  isLoading ? disablePageScroll() : enablePageScroll();
+  // isLoading ? disablePageScroll() : enablePageScroll();
 
   return (
     <>

@@ -43,7 +43,7 @@ const Movie = ({ ...movie }) => {
           </li>
           <li className="movie-info">
             <FaStar className="text-yellow-400" />
-            {movie?.vote_average.toFixed(1)}
+            {movie?.vote_average?.toFixed(1)}
           </li>
         </ul>
         <h3 className="heading-s text-white">{movie?.title || movie?.name}</h3>

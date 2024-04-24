@@ -3,7 +3,7 @@ import TrendingMovies from "../components/TrendingMovies";
 const Home = () => {
   return (
     <>
-      <TrendingMovies />;
+      <TrendingMovies />
     </>
   );
 };
