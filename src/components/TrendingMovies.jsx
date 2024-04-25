@@ -39,8 +39,7 @@ const TrendingMovies = () => {
   }, []);
 
   const handleSlideChange = (swiper) => {
-    console.log(swiper.activeIndex, swiper.slides.length);
-    if (swiper.activeIndex === swiper.slides.length - 5) {
+    if (swiper.activeIndex >= swiper.slides.length - 5) {
       fetchData();
     }
   };

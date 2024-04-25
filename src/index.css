@@ -21,4 +21,7 @@ html {
   .h-custom {
     height: calc(100dvh - 100px);
   }
+  .w-custom {
+    width: calc(100% - 100px);
+  }
 }
