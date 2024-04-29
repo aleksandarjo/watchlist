@@ -6,10 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import Heading from "../ui/Heading";
+import Loader from "./Loader";
 
 const TrendingMovies = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [page, setPage] = useState(2);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchData = useCallback(async () => {
     try {
@@ -26,13 +29,16 @@ const TrendingMovies = () => {
 
   useEffect(() => {
     const getTrendingMovies = async () => {
+      setIsLoading(true);
       try {
         const { data } = await axiosInstance.get(
           `/trending/all/week?page=1&language=en-US`,
         );
-        setTrendingMovies(data.results);
+        setTrendingMovies(data?.results);
       } catch (error) {
         console.log(error.message);
+      } finally {
+        setIsLoading(false);
       }
     };
     getTrendingMovies();
@@ -46,9 +52,8 @@ const TrendingMovies = () => {
 
   return (
     <section className="overflow-hidden">
-      <h2 className="mb-8 text-xl text-white lg:heading-l sm:text-2xl">
-        Trending
-      </h2>
+      <Heading title="Trending" />
+      {isLoading && <Loader />}
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -64,7 +69,7 @@ const TrendingMovies = () => {
         }}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
       >
-        {trendingMovies.map((movie, index) => (
+        {trendingMovies?.map((movie, index) => (
           <SwiperSlide key={`${movie.id}-${index}`}>
             <Movie {...movie} />
           </SwiperSlide>
