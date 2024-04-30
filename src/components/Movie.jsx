@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 import { FaRegBookmark } from "react-icons/fa6";
 import { FaInfoCircle } from "react-icons/fa";
 import { getYear } from "../utils/helpers";
+import noImage from "../assets/noImage.webp";
 
 import LazyLoad from "react-lazy-load";
 
 const Movie = ({ ...movie }) => {
   return (
     <LazyLoad width={"auto"} threshold={0.95}>
-      <article className="group relative h-80 w-full overflow-hidden">
+      <article className="group relative h-80 w-full overflow-hidden rounded-xl">
         <div
           className={`absolute inset-0 z-30 h-full w-full  translate-y-full bg-black/80  text-sm opacity-0 transition-all`}
         >
@@ -29,7 +30,7 @@ const Movie = ({ ...movie }) => {
         <div
           className="absolute inset-0 -z-10 h-full w-full"
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+            backgroundImage: `${movie.backdrop_path ? `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path}` : `url(${noImage}`})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
