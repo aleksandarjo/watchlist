@@ -1,7 +1,7 @@
 import { LuSearch } from "react-icons/lu";
 import { useRef, useEffect } from "react";
 
-const Search = () => {
+const Search = ({ query, setQuery }) => {
   const searchRef = useRef();
   useEffect(() => {
     searchRef.current.focus();
@@ -14,6 +14,8 @@ const Search = () => {
         type="text"
         placeholder="Search for movies or TV series"
         ref={searchRef}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
     </form>
   );
