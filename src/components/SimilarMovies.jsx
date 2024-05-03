@@ -3,12 +3,11 @@ import axiosInstance from "../services/axios";
 
 import { Link } from "react-router-dom";
 
-const SimilarMovies = ({ id, onLoading }) => {
+const SimilarMovies = ({ id }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
     const getSimilarMovies = async function () {
-      onLoading(true);
       try {
         const data = await axiosInstance.get(`/movie/${id}/similar`);
         setSimilarMovies(data?.data?.results);
@@ -16,11 +15,10 @@ const SimilarMovies = ({ id, onLoading }) => {
       } catch (error) {
         console.log(error.message);
       } finally {
-        onLoading(false);
       }
     };
     getSimilarMovies();
-  }, [id, onLoading]);
+  }, [id]);
 
   return (
     <section className="py-20">

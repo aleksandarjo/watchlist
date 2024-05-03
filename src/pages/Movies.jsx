@@ -35,14 +35,11 @@ const Movies = () => {
   }, []);
 
   const fetchData = useCallback(async () => {
-    const abortController = new AbortController();
-
     if (!isFetching) {
       setIsFetching(true);
       try {
         const { data } = await axiosInstance.get(
           `https://api.themoviedb.org/3/trending/movie/day?page=${page}`,
-          { signal: abortController.signal },
         );
         setMovies((prevMovies) => [...prevMovies, ...data.results]);
         setPage((prevPage) => prevPage + 1);
@@ -52,10 +49,6 @@ const Movies = () => {
         setIsFetching(false);
       }
     }
-
-    return () => {
-      abortController.abort();
-    };
   }, [isFetching, page]);
 
   const handleRefresh = () => {

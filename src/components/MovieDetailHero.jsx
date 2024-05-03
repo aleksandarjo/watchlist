@@ -10,12 +10,11 @@ import LinkButton from "../ui/LinkButton";
 
 import axiosInstance from "../services/axios";
 
-const MovieDetailHero = ({ id, onLoading }) => {
+const MovieDetailHero = ({ id }) => {
   const [movieDetails, setMoviesDetails] = useState([]);
 
   useEffect(() => {
     const getMovieDetails = async function () {
-      onLoading(true);
       try {
         const data = await axiosInstance.get(
           `/movie/${id}?language=en-EN&page=1`,
@@ -25,11 +24,10 @@ const MovieDetailHero = ({ id, onLoading }) => {
       } catch (error) {
         console.log(error.message);
       } finally {
-        onLoading(false);
       }
     };
     getMovieDetails();
-  }, [id, onLoading]);
+  }, [id]);
 
   return (
     <section className="relative w-full py-20 max-md:text-center lg:py-40">

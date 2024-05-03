@@ -6,6 +6,12 @@ import Movie from "./Movie";
 import Search from "./Search";
 import Sidebar from "./Sidebar";
 
+// todo slider custom hook ✅
+// todo reusable custom hook for api call (DRY)
+// todo watch trailer everywhere including official trailers section on details page
+// todo remember on which page you was, which slide, and save that in local storage, call it on mount
+// todo reusable hook useLocalStorage
+
 const AppLayout = () => {
   const [query, setQuery] = useState("");
   const [searchedMovies, setSearchedMovies] = useState([]);
@@ -50,7 +56,7 @@ const AppLayout = () => {
         <Search query={query} setQuery={setQuery} />
 
         {searchedMovies && searchedMovies.length > 0 ? (
-          <>
+          <div>
             <h2 className="mb-5 text-[1.25rem] text-white md:heading-l lg:mb-12">
               Found {searchedMovies?.length} results for &quot;{query}&quot;
             </h2>
@@ -59,7 +65,7 @@ const AppLayout = () => {
                 <Movie key={movie.id} {...movie} />
               ))}
             </div>
-          </>
+          </div>
         ) : (
           <Outlet />
         )}
