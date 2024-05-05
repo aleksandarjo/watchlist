@@ -6,6 +6,8 @@ import Heading from "../ui/Heading";
 import Movie from "../components/Movie";
 import Loader from "../components/Loader";
 
+import LazyLoad from "react-lazy-load";
+
 const Series = () => {
   const [series, setSeries] = useState([]);
   const [page, setPage] = useState(2);
@@ -75,7 +77,9 @@ const Series = () => {
         loader={<Loader />}
       >
         {series.map((movie, index) => (
-          <Movie key={`${movie.id}-${index}`} {...movie} />
+          <LazyLoad key={`${movie.id}-${index}`}>
+            <Movie {...movie} />
+          </LazyLoad>
         ))}
       </InfiniteScroll>
     </section>

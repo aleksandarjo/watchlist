@@ -16,11 +16,8 @@ const MovieDetailHero = ({ id }) => {
   useEffect(() => {
     const getMovieDetails = async function () {
       try {
-        const data = await axiosInstance.get(
-          `/movie/${id}?language=en-EN&page=1`,
-        );
+        const data = await axiosInstance.get(`/movie/${id}`);
         setMoviesDetails(data?.data);
-        console.log(data?.data);
       } catch (error) {
         console.log(error.message);
       } finally {

@@ -4,7 +4,6 @@ import Movie from "../components/Movie";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import Heading from "../ui/Heading";
 import Loader from "./Loader";

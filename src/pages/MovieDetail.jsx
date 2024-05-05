@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MovieDetailHero from "../components/MovieDetailHero";
 import SimilarMovies from "../components/SimilarMovies";
+import WatchTrailers from "../components/WatchTrailers";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -13,7 +14,8 @@ const MovieDetail = () => {
   return (
     <>
       <MovieDetailHero id={id} />
-      <SimilarMovies id={id} />
+      <WatchTrailers id={id} />
+      {/* <SimilarMovies id={id} /> */}
     </>
   );
 };
